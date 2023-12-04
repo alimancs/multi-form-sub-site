@@ -403,7 +403,7 @@ body {
     }
     #prev-next-box {
         position: absolute;
-        bottom: 0px;
+        bottom: 15px;
         width:100%;
         left:0px;
         background-color: white;
