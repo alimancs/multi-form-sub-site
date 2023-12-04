@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>multi step form by alimam</title>
+</head>
+<body>
+    <div id="mobile-step-box">
+        <div class="stepcircle" id="stepdesk1">1</div>
+        <div class="stepcircle" id="stepdesk2">2</div>
+        <div class="stepcircle" id="stepdesk3">3</div>
+        <div class="stepcircle" id="stepdesk4">4</div>
+    </div>
+    <center>
+        <div id="desktopContainer">
+            <div id="stepContainer">
+                <div id="top-step-box" class="step-box">
+                    <div class="stepcircle" id="stepdesk1">1</div>
+                    <div class="step-info-box">
+                        <span class="step-para">STEP 1</span>
+                        <span class="step-title">YOUR INFO</span>
+                    </div>
+                </div>
+                <div class="step-box">
+                    <div class="stepcircle" id="stepdesk2">2</div>
+                    <div class="step-info-box">
+                        <span class="step-para">STEP 2</span>
+                        <span class="step-title">SELECT PLAN</span>
+                    </div>
+                </div>
+                <div class="step-box">
+                    <div class="stepcircle" id="stepdesk3">3</div>
+                    <div class="step-info-box">
+                        <span class="step-para">STEP 3</span>
+                        <span class="step-title">ADD-ONS</span>
+                    </div>
+                </div>
+                <div class="step-box">
+                    <div class="stepcircle" id="stepdesk4">4</div>
+                    <div class="step-info-box">
+                        <span class="step-para">STEP 4</span>
+                        <span class="step-title">SUMMARY</span>
+                    </div>
+                </div>
+            </div>
+            <div id="formContainer">
+                <div id="main-form-box">
+                    <div id="form-top">
+                        <span class="ft" id="formhead">Personal info</span>
+                        <span class="ft" id="formpara">Please provide your name, email, address and phone number</span>
+                    </div>
+                    <div class="form" id="personal-info">
+                        <div id="pi-head"><span>Name</span><span id="name-error" class="required-error">This field is required</span></div>
+                        <input autocomplete="cc-name" class="pi-input" id="name" type="text" placeholder="e.g aliman ahmed">
+                        <div id="pi-head"><span>Email Address</span><span id="email-error" class="required-error">This field is required</span></div>
+                        <input autocomplete="email" class="pi-input" id="email" type="email"  placeholder="e.g alimanahmed@lorem.com">
+                        <div id="pi-head"><span>Phone Number</span><span id="phone-error" class="required-error">This field is required</span></div>
+                        <input autocomplete="mobile"  class="pi-input" id="phone"  placeholder="e.g +1230000000">
+                    </div>
+                    <div class="form" id="plan">
+                        <div id="plan-select-box">
+                            <div id="arcadeplan" class="plan-button" onclick="addPlan('#ar', 'arcade')">
+                                <div style="background-image: url(icon-arcade.svg);" class="plan-icon"></div>
+                                <span class="plan-title">Arcade</span>
+                                <span id="ar" class="plan-price">$9/mo</span>
+                                <span class="plan-bonus-text">2 months free</span>
+                            </div>
+                            <div id="advancedplan" class="plan-button" onclick="addPlan('#ad', 'pro')">
+                                <div style="background-image: url(icon-advanced.svg);" class="plan-icon"></div>
+                                <span class="plan-title">Advanced</span>
+                                <span id="ad" class="plan-price">$12/mo</span>
+                                <span class="plan-bonus-text">2 months free</span>
+                            </div>
+                            <div id="proplan" class="plan-button" onclick="addPlan('#pr', 'pro')">
+                                <div style="background-image: url(icon-pro.svg);" class="plan-icon"></div>
+                                <span class="plan-title">Pro</span>
+                                <span id="pr" class="plan-price">$15/mo</span>
+                                <span class="plan-bonus-text">2 months free</span>
+                            </div>
+                        </div>
+                        <div id="due-box">
+                            <span class="due-text" id="plan-monthly">Monthly</span>
+                            <div id="due-switch-box">
+                                <div id="due-switch-button"></div>
+                            </div>
+                            <span class="due-text" id="plan-yearly">Yearly</span>
+                        </div>
+                    </div>
+                    <div class="form" id="add-ons">
+                        <div id="ao1" onclick="addOnAdder('onlineService', '#ol', 0, '#olc', '#ao1', 'Online service')" class="add-ons-box">
+                            <div class="add-on">
+                                <div class="ado-checkbox-container">
+                                    <input id="olc" type="checkbox">
+                                </div>
+                                <div class="ado-hp-container">
+                                    <span class="ado-head">Online service</span>
+                                    <span class="ado-para">Access to multiplayer games&ThickSpace;&ThickSpace;</span>
+                                </div>
+                                <div class="ado-price-container">
+                                    <span id="ol" class="ado-price">+$1/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ao2" onclick="addOnAdder('largerStorage', '#ls', 1, '#lsc', '#ao2', 'Larger storage')" class="add-ons-box">
+                            <div class="add-on">
+                                <div class="ado-checkbox-container">
+                                    <input id="lsc" type="checkbox">
+                                </div>
+                                <div class="ado-hp-container">
+                                    <span class="ado-head">Larger storage</span>
+                                    <span class="ado-para">Extra 1TB of cloud save &ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;</span>
+                                </div>
+                                <div class="ado-price-container">
+                                    <span id="ls" class="ado-price">+$2/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ao3" onclick="addOnAdder('customProfits', '#cp', 2, '#cpc', '#ao3', 'Customizable profits')" class="add-ons-box">
+                            <div class="add-on">
+                                <div class="ado-checkbox-container">
+                                    <input id="cpc" type="checkbox">
+                                </div>
+                                <div class="ado-hp-container">
+                                    <span class="ado-head">Customizable profile</span>
+                                    <span class="ado-para">Custom theme on your profile</span>
+                                </div>
+                                <div class="ado-price-container">
+                                    <span id="cp" class="ado-price">+$2/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form" id="finish-up">
+                        <div id="finish-up-box">
+                            <div class="ado-summary-box" id="plan-box">
+                                <div class="sum-box" id="pb-text-container">
+                                    <span id="pb-head">Arcade (monthly)</span>
+                                    <span id="pb-button">Change</span>
+                                </div>
+                                <div class="sum-price-box">
+                                    <span class="sum-price">$9/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="finish-total-box">
+                            <div id="ftb-text">
+                                <span id="tt">Total (per month)</span>
+                            </div>
+                            <div id="ftb-total">
+                                <span id="total-summary">$78/mo</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form" id="success-page">
+                        <div id="success-icon"></div>
+                        <span id="s-head">Thank you</span>
+                        <span id="s-para">
+                            Thanks for confirming your subscription! we hope you have fun using
+                            our platform. If you ever need support, please feel free to email us
+                            at support@alicoding.com
+                        </span>
+                    </div>
+
+                </div>
+                <div id="prev-next-box">
+                    <button onclick="pageMove('-')" class="prev-next-button" id="prev-button">GO BACK</button>
+                    <button onclick="nextPage()" class="prev-next-button"  id="next-button">NEXT STEP</button>
+                </div>
+            </div>
+        </div>
+    </center>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
