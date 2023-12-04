@@ -388,6 +388,9 @@ body {
 } */
 /* ------MEDIA QUERIES------  */
 @media (max-width:742px) {
+    body, #stepContainer {
+        position:relative;
+    }
     .form {
         margin-top:15px;
     }
